@@ -1,56 +1,83 @@
 import './../style/filters.css'
 import ScrollMenu from 'react-horizontal-scrolling-menu';
+import {IoIosArrowDropright,IoIosArrowDropleft} from 'react-icons/io'
+import { useEffect, useState } from 'react';
+
 
 const Filters = () => {
+    const [left,setLeft] = useState(60)
+    const [animation,setAnimation] = useState("");
+
+
+    const leftClick = () =>{
+        console.log(left)
+        setAnimation("bannermoveright");
+        setTimeout(() => {
+            setLeft(left<60 ? left+180:left);
+            setAnimation("");
+        }, 300);
+    }
+    const rightClick = () =>{
+        console.log(left)
+        setAnimation("bannermoveleft");
+        setTimeout(() => {
+            setLeft(left>-4620?left-180:left);
+            setAnimation("");
+        }, 300);
+
+    }
     
     return (
-        <div className="filters" >
-                <div className="filter">
+        <div className="container" >
+            <IoIosArrowDropleft className='left-arrow' onClick={()=>{leftClick()}}/>
+            <div className="filter-items" style={{ "left": left,"animationName":animation}}>
+
+                <div className="filter ">
                     <img className="filter-pic"  src="https://a0.muscache.com/pictures/8e507f16-4943-4be9-b707-59bd38d56309.jpg" alt="" width="24" height="24" />
                     <span className="filter-name" >Islands </span>
                 </div>
 
-                <div className="filter">
+                <div className="filter ">
                     <img className="filter-pic"  src="https://a0.muscache.com/pictures/10ce1091-c854-40f3-a2fb-defc2995bcaf.jpg" alt="" width="24" height="24" />
                     <span className="filter-name" >Beach </span>
                 </div>
 
-                <div className="filter">
+                <div className="filter ">
                     <img className="filter-pic"  src="https://a0.muscache.com/pictures/3fb523a0-b622-4368-8142-b5e03df7549b.jpg" alt="" width="24" height="24" />
                     <span className="filter-name" >Amazing pools </span>
                 </div>
 
-                <div className="filter">
+                <div className="filter ">
                     <img className="filter-pic"  src="https://a0.muscache.com/pictures/c5a4f6fc-c92c-4ae8-87dd-57f1ff1b89a6.jpg" alt="" width="24" height="24" />
                     <span className="filter-name" >OMG! </span>
                 </div>
 
-                <div className="filter">
+                <div className="filter ">
                     <img className="filter-pic"  src="https://a0.muscache.com/pictures/c0a24c04-ce1f-490c-833f-987613930eca.jpg" alt="" width="24" height="24" />
                     <span className="filter-name" >National parks </span>
                 </div>
 
-                <div className="filter">
+                <div className="filter ">
                     <img className="filter-pic"  src="https://a0.muscache.com/pictures/732edad8-3ae0-49a8-a451-29a8010dcc0c.jpg" alt="" width="24" height="24" />
                     <span className="filter-name" >Cabins </span>
                 </div>
 
-                <div className="filter">
+                <div className="filter ">
                     <img className="filter-pic"  src="https://a0.muscache.com/pictures/50861fca-582c-4bcc-89d3-857fb7ca6528.jpg" alt="" width="24" height="24" />
                     <span className="filter-name" >Design </span>
                 </div>
 
-                <div className="filter">
+                <div className="filter ">
                     <img className="filter-pic"  src="https://a0.muscache.com/pictures/8b44f770-7156-4c7b-b4d3-d92549c8652f.jpg" alt="" width="24" height="24" />
                     <span className="filter-name" >Arctic </span>
                 </div>
 
-                <div className="filter">
+                <div className="filter ">
                     <img className="filter-pic"  src="https://a0.muscache.com/pictures/35919456-df89-4024-ad50-5fcb7a472df9.jpg" alt="" width="24" height="24" />
                     <span className="filter-name" >Tiny homes </span>
                 </div>
 
-                <div className="filter">
+                <div className="filter ">
                     <img className="filter-pic"  src="https://a0.muscache.com/pictures/677a041d-7264-4c45-bb72-52bff21eb6e8.jpg" alt="" width="24" height="24" />
                     <span className="filter-name" >Lakefront </span>
                 </div>
@@ -284,8 +311,9 @@ const Filters = () => {
                     <img className="filter-pic"  src="https://a0.muscache.com/pictures/a4634ca6-1407-4864-ab97-6e141967d782.jpg" alt="" width="24" height="24" />
                     <span className="filter-name" >Lake </span>
                 </div>
-
             </div>
+            <IoIosArrowDropright className='right-arrow'onClick={()=>{rightClick()}} />
+        </div>
     )
 }
 
