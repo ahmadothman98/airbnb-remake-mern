@@ -12,8 +12,8 @@ const Navbar = () => {
         <nav className='nav'>
             <div className='left'>
                 <div className='full-logo'>
-                    <a href='#'><imag src={logo} className="logo-imag" /></a>
-                    <a href='#'><imag src={word} className="logo-word" /></a>
+                    <a href='#'><img src={logo} className="logo-img" /></a>
+                    <a href='#'><img src={word} className="logo-word" /></a>
                 </div>
             </div>
             <div className='middle'>
@@ -40,7 +40,7 @@ const Navbar = () => {
                         <div className='burger'>
                             <GiHamburgerMenu />
                         </div>
-                        <div className='profile-imag'>
+                        <div className='profile-img'>
                             <IoMdPerson />
                         </div>
                     </div>
