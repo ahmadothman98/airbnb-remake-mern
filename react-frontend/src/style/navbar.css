@@ -10,15 +10,17 @@
     width: 102px;
     display: flex;
     align-items: center;
+    margin-left: 80px;
 }
 .nav{
     height: 80px;
-    width: calc(100% - 160px);
+    width: calc(100% );
     border-bottom: 1px solid rgb(235,235,235);
     display: flex;
     align-items: center;
-    padding: 0 80px;
     margin: 0 auto;
+    position: fixed;
+    background-color: white;
 
 }
 .nav div{
@@ -33,6 +35,7 @@
     height: 48px;
     cursor: pointer;
     transition: 0.2s;
+    
 }
 .nav-menu:hover{
     box-shadow: rgba(0, 0, 0, 0.12) 0px 3px 5px, rgba(0, 0, 0, 0.05) 0px 4px 12px; 
@@ -41,6 +44,8 @@
 .nav-menu .texts {
     height: 48px;
     line-height: 48px;
+    white-space: nowrap;
+
 
 }
 .nav-menu .texts span{
@@ -80,6 +85,8 @@
     padding: 12px;
     border-radius: 50px;
     font-weight: 600;
+    white-space: nowrap;
+
 }
 .globe{
     height: 16px;
@@ -132,6 +139,7 @@
 }
 .rightside-elements{
     display: flex;
+    margin-right: 80px;
 }
 .left{
     display: flex;
@@ -147,4 +155,12 @@
     display: flex;
     justify-content: flex-end;
     width: 100%;
+}
+.white-space{
+    position: absolute;
+    top:81px;
+    height: 80px;
+    width: 100%;
+    z-index: -2;
+    background-color: white
 }

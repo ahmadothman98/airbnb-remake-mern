@@ -1,11 +1,15 @@
 .container{
-    height: 124px;
+    height: 80px;
     width: 80%;
-    margin: 0 auto;
-    position: relative;
+    margin: 80px auto;
+    position: fixed;
     overflow: hidden;
     display: flex;
     align-items: center;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
     
 }
 .filter-items{
@@ -25,6 +29,11 @@
     align-items: center;
     height: 124px;
     margin: 0 12px;
+    cursor: pointer;
+}
+.filter-name{
+    padding-bottom: 10px;
+
 }
 .left-arrow{
     position: absolute;
@@ -37,6 +46,7 @@
     border-radius: 100%;
     padding: 5px;
     box-shadow: 0 0 20px 30px white;
+    top: 50%;
 }
 .right-arrow{
     position: absolute;
@@ -49,6 +59,7 @@
     border-radius: 100%;
     padding: 5px;
     box-shadow: 0 0 20px 30px white;
+    top:50%
 }
 .hidden{
     display: none;

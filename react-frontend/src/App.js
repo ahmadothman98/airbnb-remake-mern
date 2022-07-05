@@ -8,11 +8,11 @@ import { IconName } from "react-icons/fa";
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Router >
         <Navbar />
         <Filters />
         <Routes>
-          <Route path='/main' element={Main}/>
+            <Route exact path='/main' element={<Main  />}/>
         </Routes>
       </Router>
     </div>
